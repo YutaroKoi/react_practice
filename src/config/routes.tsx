@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import App from '../App';
+import { NotFound } from '../NotFound';
 import { Sample } from '../Sample';
 
 export const Path = {
@@ -13,7 +14,7 @@ const routes = (
   <Switch>
     <Route exact path={Path.app} component={App} />
     <Route exact path={Path.sample} component={Sample} />
-    <Redirect to={Path.app} />
+    <Route component={NotFound} />
   </Switch>
 );
 
