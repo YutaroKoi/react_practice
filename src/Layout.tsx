@@ -1,20 +1,16 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { Link } from 'react-router-dom';
+// import { Reset } from 'styled-reset';
 
-import logo from './logo.svg';
-import { Path } from './config/routes';
-
-const App: React.FC = () => {
+export const Layout: React.FC = ({ children }) => {
   return (
     <>
+      {/* <Reset /> */}
       <GlobalStyle />
 
       <Wrapper>
-        <Header>
-          <Logo src={logo} className='App-logo' alt='logo' />
-          <SampleLink to={Path.sample}>sample page</SampleLink>
-        </Header>
+        <Header>React Tutorial</Header>
+        <Body>{children}</Body>
       </Wrapper>
     </>
   );
@@ -37,31 +33,20 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Wrapper = styled.div`
-  text-align: center;
+  height: 100%;
 `;
 
-const Header = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
+const Header = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`;
-
-const Logo = styled.img`
-  height: 40vmin;
-`;
-
-const SampleLink = styled(Link)`
+  height: 60px;
   color: #fff;
-  margin-top: 30px;
+  background-color: #09d3ac;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 20px;
 `;
 
-const Text = styled.p``;
-
-const CodeText = styled.code``;
-
-export default App;
+const Body = styled.div`
+  height: calc(100vh - 60px);
+`;
