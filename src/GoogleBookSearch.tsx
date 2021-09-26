@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-export const Sample: React.FC = () => {
+export const GoogleBookSearch: React.FC = () => {
   const [queryString, changeQueryString] = useState('');
   const [searchResult, changeSearchResult] = useState<any>(null);
 
   const searchGoogleBooks = async (query: string) => {
     const url = 'https://www.googleapis.com/books/v1/volumes';
-    const params = { q: query };
+    const params = { q: query, startIndex: 80, maxResults: 40 };
     try {
       const response = await axios.get(url, { params });
       return {

@@ -4,18 +4,18 @@ import { Route, Switch } from 'react-router-dom';
 import App from '../App';
 // import { Layout } from '../Layout';
 import { NotFound } from '../NotFound';
-import { Sample } from '../Sample';
+import { GoogleBookSearch } from '../GoogleBookSearch';
 
 export const Path = {
   app: '/',
-  sample: '/sample',
+  googleBookSearch: '/google_book_search',
 };
 
 const routes = (
   // <Layout>
   <Switch>
     <Route exact path={Path.app} component={App} />
-    <Route exact path={Path.sample} component={Sample} />
+    <Route exact path={Path.googleBookSearch} component={GoogleBookSearch} />
     <Route component={NotFound} />
   </Switch>
   // </Layout>

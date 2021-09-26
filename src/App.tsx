@@ -13,7 +13,7 @@ const App: React.FC = () => {
       <Wrapper>
         <Header>
           <Logo src={logo} className='App-logo' alt='logo' />
-          <SampleLink to={Path.sample}>sample page</SampleLink>
+          <SampleLink to={Path.googleBookSearch}>Google Book Search</SampleLink>
         </Header>
       </Wrapper>
     </>
