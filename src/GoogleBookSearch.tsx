@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { VolumeList } from 'models/Volume';
 
 export const GoogleBookSearch: React.FC = () => {
-  const [queryString, changeQueryString] = useState('');
-  const [searchResult, changeSearchResult] = useState<any>(null);
+  const [queryString, changeQueryString] = useState<string>('');
+  const [searchResult, changeSearchResult] = useState<VolumeList>(new VolumeList());
 
   const searchGoogleBooks = async (query: string) => {
     const url = 'https://www.googleapis.com/books/v1/volumes';
