@@ -31,7 +31,7 @@ export const GoogleBookSearch: React.FC = () => {
     event.preventDefault();
     const result = await searchGoogleBooks(queryString);
     if (result.isSuccess) {
-      changeSearchResult(result.data);
+      changeSearchResult(VolumeList.fromResponse(result.data));
     } else {
       window.alert(String(result.error));
     }
