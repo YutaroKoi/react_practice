@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+
 import { VolumeList } from 'models/Volume';
 
 export const GoogleBookSearch: React.FC = () => {
@@ -47,9 +48,9 @@ export const GoogleBookSearch: React.FC = () => {
             検索
           </SearchButton>
         </SearchForm>
-        {searchResult && (
+        {searchResult.kind && (
           <ResultContent>
-            {searchResult.items.map((item: any) => {
+            {searchResult.items.map(item => {
               return <ResultTitle key={item.id}>{item.volumeInfo.title}</ResultTitle>;
             })}
           </ResultContent>

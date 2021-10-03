@@ -1,4 +1,4 @@
-import { List, Record } from "immutable";
+import { List, Record } from 'immutable';
 import dayjs, { Dayjs } from 'dayjs';
 
 import { JSObject } from 'types/Common';
@@ -59,10 +59,10 @@ export class Volume extends Record<{
   id: string;
   selfLink: string;
   volumeInfo: VolumeInfo;
-} > ({
+}>({
   id: '',
   selfLink: '',
-  volumeInfo: new VolumeInfo,
+  volumeInfo: new VolumeInfo(),
 }) {
   static generateFromResponse(response: JSObject) {
     const params = { ...response };
@@ -86,7 +86,3 @@ export class VolumeList extends Record<{
     return new VolumeList(params);
   }
 }
-
-
-
-
